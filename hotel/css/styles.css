@@ -1,0 +1,39 @@
+#main-page {
+    margin-top: 70px;
+}
+
+#carousel-container {
+    max-width: 640px;
+}
+
+.carousel-item>IMG {
+    border-radius: 15px;
+}
+
+.carousel-caption {
+    background-color: rgba(46, 46, 46, 0.5);
+    border-radius: 15px;
+}
+
+.card>IMG {
+    border-radius: 15px;
+    border-color: black;
+}
+
+.card {
+    border: 0;
+}
+
+.card-title {
+    margin: auto;
+    text-align: center;
+    background-color: rgba(46, 46, 46, 0.5);
+}
+
+.btn {
+    padding: 0px 6px;
+}
+
+.btn-floating {
+    font-size: 20px;
+}
