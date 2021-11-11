@@ -2,7 +2,7 @@
 var map;
 var mapLat = 35.6576;
 var mapLng = 139.7640;
-var mapDefaultZoom = 13;
+var mapDefaultZoom = 2;
 
 function initialize_map() {
     map = new ol.Map({
@@ -41,12 +41,13 @@ function add_map_point(lat, lng) {
     map.addLayer(vectorLayer);
 }
 
-
-// Add multiple locations
-var locations = [[35.6854, 139.7534], [35.6776, 139.7737], [35.6247234, 139.7754777], [51.468,-2.7308]];
-
-function show_map_points(locations) {
-    for (let coords of locations) {
+// Add multiple points to the map from hotel database in firebase
+function showMapPoints(hotelArray) {
+    let coordinateArray = [];
+    for (let hotel of hotelArray) {
+        coordinateArray.push([hotel.location.latitude, hotel.location.longitude])
+    }
+    for (let coords of coordinateArray) {
         add_map_point(coords[0], coords[1])
     }
 }

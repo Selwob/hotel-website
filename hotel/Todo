@@ -1,3 +1,5 @@
+0. Fix hotel pictures & amenities on listing page
+
 
 1.  Map with hotels -> googlemap.api
 
@@ -10,6 +12,3 @@
 5. Check availability / Booking
 
 6. Sign up
-
-
-Fix : facilities icons overflowing box on hotels page at certain screen sizes
