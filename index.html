@@ -228,41 +228,6 @@
       <!-- Load Bootstrap -->
       <script src="https://unpkg.com/@popperjs/core@2"></script>
       <script src="js/bootstrap.bundle.js"></script>
-
-      <!-- Load Firebase -->
-      <script type="module">
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js'
-
-        // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
-        import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.2.0/firebase-analytics.js'
-
-        // Add Firebase products that you want to use
-        import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js'
-        import { getFirestore, collection, addDoc, getDoc, getDocs, doc, query, setDoc, updateDoc } from 'https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js'
-
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyCPSSZTxfN21Loqu4WfhSkTBNPOVxIQLu4",
-          authDomain: "hotel-website-59961.firebaseapp.com",
-          projectId: "hotel-website-59961",
-          storageBucket: "hotel-website-59961.appspot.com",
-          messagingSenderId: "633745579152",
-          appId: "1:633745579152:web:6f5b3e5eda5618f9e24c15",
-          measurementId: "G-4PEEVK84HW"
-        };
-        const firebaseApp = initializeApp(firebaseConfig);
-        const auth = getAuth();
-        const db = getFirestore(firebaseApp);
-
-        const hotelList = await getDocs(collection(db, "hotels"));
-        hotelList.forEach((doc) => {
-          console.log(doc.id, " => ", doc.data());
-        });
-
-
-      </script>
-
-
 </body>
 
 <!-- Show visible lines around all page objects -->
