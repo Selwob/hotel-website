@@ -1,0 +1,290 @@
+<!-- Add hotels to Firestore Database -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+
+    <title>Add Hotel</title>
+
+    <script src="js/hotel.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+
+                <i class="bi bi-house-door"> Getaway Hotels</i>
+                <!-- <img src="assets/hotel-logo.png" alt="" width="40" height="40"> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="hotels.html">Hotels</a>
+                    <a class="nav-link" href="map-google.html">Map</a>
+                    <a class="nav-link" active aria-current="page" href="#">Add Hotel</a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <form id="add-user">
+        <h1>Sign Up</h1>
+        <label for="user-email">user-email:</label><br>
+        <input type="text" id="user-email" name="user-email" required value=""><br>
+        <br>
+
+        <label for="user-password">user-password:</label><br>
+        <input type="text" id="user-password" name="user-password" required value=""><br>
+        <br>
+
+        <input type="button" value="Submit" id="submit-user"><br>
+        <br>
+    </form>
+
+    <form id="sign-in">
+        <h1>Sign In</h1>
+        <label for="sign-in-email">sign-in-email:</label><br>
+        <input type="text" id="sign-in-email" name="sign-in-email" required value=""><br>
+        <br>
+
+        <label for="sign-in-password">sign-in-password:</label><br>
+        <input type="text" id="sign-in-password" name="sign-in-password" required value=""><br>
+        <br>
+
+        <input type="button" value="Submit" id="sign-in-submit"><br>
+        <br>
+    </form>
+
+    <form id="add-hotel">
+        <h1>Register Hotel</h1>
+        <label for="hotel-id">hotel-id:</label><br>
+        <input type="text" id="hotel-id" name="hotel-id" required value=""><br>
+        <br>
+
+        <label for="hotel-name">hotel-name:</label><br>
+        <input type="text" id="hotel-name" name="hotel-name" required value="Hotel Hotel"><br>
+        <br>
+
+        <label for="hotel-latitude">hotel-latitude:</label><br>
+        <input type="number" id="hotel-latitude" name="hotel-latitude" min="-90" max="90" required value="45"><br>
+        <br>
+
+        <label for="hotel-longitude">hotel-longitude:</label><br>
+        <input type="number" id="hotel-longitude" name="hotel-longitude" min="-180" max="180" required value="45"><br>
+        <br>
+
+        <label for="hotel-num-rooms">hotel-num-rooms:</label><br>
+        <input type="number" id="hotel-num-rooms" name="hotel-num-rooms" required value="15"><br>
+        <br>
+
+        <label for="hotel-price">hotel-price:</label><br>
+        <input type="number" id="hotel-price" name="hotel-price" required value="5000"><br>
+        <br>
+
+        <p>Amenities</p>
+        <label for="hotel-wifi">hotel-wifi:</label><br>
+        <input type="checkbox" id="hotel-wifi" name="hotel-wifi"><br>
+
+        <label for="hotel-tv">hotel-tv:</label><br>
+        <input type="checkbox" id="hotel-tv" name="hotel-tv"><br>
+
+        <label for="hotel-shop">hotel-shop:</label><br>
+        <input type="checkbox" id="hotel-shop" name="hotel-shop"><br>
+
+        <label for="hotel-atm">hotel-atm:</label><br>
+        <input type="checkbox" id="hotel-atm" name="hotel-atm"><br>
+
+        <label for="hotel-cinema">hotel-cinema:</label><br>
+        <input type="checkbox" id="hotel-cinema" name="hotel-cinema"><br>
+
+        <label for="hotel-phone">hotel-phone:</label><br>
+        <input type="checkbox" id="hotel-phone" name="hotel-phone"><br>
+
+        <label for="hotel-umbrella">hotel-umbrella:</label><br>
+        <input type="checkbox" id="hotel-umbrella" name="hotel-umbrella"><br>
+        <br>
+
+        <label for="hotel-tel">hotel-tel:</label><br>
+        <input type="number" id="hotel-tel" name="hotel-tel" required value="1234567890"><br>
+        <br>
+
+        <label for="hotel-description">hotel-description:</label><br>
+        <input type="text" id="hotel-description" name="hotel-description" required value="This hotel is a Lorem ipsum dolor sit amet consectetur adipisicing elit. Id dolor adipisci atque
+            deleniti quisquam recusandae eligendi cupiditate laborum minima aliquam!
+            When you come to this hotel you will Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Laborum facere provident quasi commodi impedit. Unde doloribus atque iste consequatur nobis."><br>
+        <br>
+
+        <input type="button" value="Submit" id="submit-hotel">
+
+    </form>
+
+
+
+
+    <script>
+        // Sign in user with provided credentials
+        function signInUserAfterClick() {
+
+        }
+        const getUserCredentials = document.querySelector('#sign-in-submit');
+        getUserCredentials.onclick = (event) => {
+            event.preventDefault();
+            let userCredentials = {
+                email: document.querySelector("#sign-in-email").value,
+                password: document.querySelector("#sign-in-password").value,
+            }
+            signInUserAfterClick(userCredentials);
+
+        }
+
+
+        // Listen for #add-user form submit then send data to Firebase
+        function submitUserAfterClick() {
+
+        }
+        const submitUser = document.querySelector('#submit-user');
+        submitUser.onclick = (event) => {
+            event.preventDefault();
+            let userInfo = {
+                userEmail: document.querySelector("#user-email").value,
+                userPassword: document.querySelector("#user-password").value,
+            }
+            submitUserAfterClick(userInfo);
+        }
+
+
+
+        // Listen for #add-hotel form submit then send data to Firebase
+        function afterClick() {
+
+        }
+        const submit = document.querySelector("#submit-hotel")
+        submit.onclick = (event) => {
+            event.preventDefault();
+            let hotelInfo = {
+                hotelId: document.querySelector("#hotel-id").value,
+                hotelName: document.querySelector("#hotel-name").value,
+                hotelLatitude: document.querySelector("#hotel-latitude").valueAsNumber,
+                hotelLongitude: document.querySelector("#hotel-longitude").valueAsNumber,
+                hotelNumRooms: document.querySelector("#hotel-num-rooms").valueAsNumber,
+                hotelPrice: document.querySelector("#hotel-price").valueAsNumber,
+                hotelWifi: document.querySelector("#hotel-wifi").checked,
+                hotelTv: document.querySelector("#hotel-tv").checked,
+                hotelShop: document.querySelector("#hotel-shop").checked,
+                hotelAtm: document.querySelector("#hotel-atm").checked,
+                hotelCinema: document.querySelector("#hotel-cinema").checked,
+                hotelPhone: document.querySelector("#hotel-phone").checked,
+                hotelUmbrella: document.querySelector("#hotel-umbrella").checked,
+                hotelTel: document.querySelector("#hotel-tel").valueAsNumber,
+                hotelDescription: document.querySelector("#hotel-description").value,
+
+            }
+
+            afterClick(hotelInfo);
+
+        }
+    </script>
+
+
+
+    <!-- Load Firebase -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js'
+
+        // Add Firebase products that you want to use
+        import { getFirestore, collection, addDoc, getDoc, getDocs, doc, query, setDoc, updateDoc, GeoPoint } from 'https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js'
+
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js'
+
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyCPSSZTxfN21Loqu4WfhSkTBNPOVxIQLu4",
+            authDomain: "hotel-website-59961.firebaseapp.com",
+            projectId: "hotel-website-59961",
+            storageBucket: "hotel-website-59961.appspot.com",
+            messagingSenderId: "633745579152",
+            appId: "1:633745579152:web:6f5b3e5eda5618f9e24c15",
+            measurementId: "G-4PEEVK84HW"
+        };
+
+        const firebaseApp = initializeApp(firebaseConfig);
+        const db = getFirestore(firebaseApp);
+        const auth = getAuth();
+
+        submitUserAfterClick = async function (userInfo) {
+            createUserWithEmailAndPassword(auth, userInfo.userEmail, userInfo.userPassword)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    // ...
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // ..
+                });
+
+        }
+
+        signInUserAfterClick = async function (userCredentials) {
+            signInWithEmailAndPassword(auth, userCredentials.email, userCredentials.password)
+                .then((userCredential) => {
+                    // Signed in
+                    const user = userCredential.user;
+                    console.log(user)
+                    // ...
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                });
+        }
+
+
+        afterClick = async function (hotelInfo) {
+            await setDoc(doc(db, "hotels", hotelInfo.hotelId), {
+                name: hotelInfo.hotelName,
+                location: new GeoPoint(hotelInfo.hotelLatitude, hotelInfo.hotelLongitude),
+                numRooms: hotelInfo.hotelNumRooms,
+                price: hotelInfo.hotelPrice,
+                amenities: {
+                    wifi: hotelInfo.hotelWifi,
+                    tv: hotelInfo.hotelTv,
+                    shop: hotelInfo.hotelShop,
+                    atm: hotelInfo.hotelAtm,
+                    cinema: hotelInfo.hotelCinema,
+                    phone: hotelInfo.hotelPhone,
+                    umbrella: hotelInfo.hotelUmbrella,
+                },
+                tel: hotelInfo.hotelTel,
+                description: hotelInfo.hotelDescription,
+            }).then(console.log("hotel uploaded to firebase. probably."));
+        }
+
+
+    </script>
+
+</body>
+
+<script src="js/debugcss.js"></script>
+
+
+</html>

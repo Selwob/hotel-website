@@ -37,7 +37,8 @@ class Hotel {
 
                 <h1 class="h6">Info</h1>
                 <p>
-                    We have ${this.numRooms} rooms available for only £${this.price} per night! <br>
+                    We have ${this.numRooms} rooms available for only £${this.price} per night!<br>
+                    ${"<a href='https://buy.stripe.com/test_28o16pd0nde8412144'>Book Here!</a>"}<br>
                     Call: ${this.tel} or visit us at ${this.location.latitude}° latitude ${this.location.longitude}° longitude.
                 </p>
                 
